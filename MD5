@@ -1,4 +1,12 @@
-7ed111b96ac1398ead5e636e18231087 *DESCRIPTION
-10158f0bafa4555a9ab6d7a774dfc78b *NAMESPACE
-0c283d105a725c24db2c893002558188 *R/clogitLasso.R
-2cbb4c0a9ac0671fa75ede0758cfb2bc *man/clogitLasso.Rd
+4ae4092e984fbebb468ee32b3775eff9 *DESCRIPTION
+94c2a3704dbd16ea51c4cc5b7944af03 *NAMESPACE
+ff16c0cccc8f5ef7ebebb5ed999638c7 *R/clogitLasso.R
+a6b5b2039bb7f84e98aa9440510f2fbf *R/crosval.R
+5c83d8749bf3cacaccf0ed0d2f91d70f *R/crosval1M.R
+3cdd8f3316d8acb8b832b41bfa2c10e4 *R/cv.clogitLasso.R
+2333158a99baa3d10d4ee657d6459229 *R/plot.clogitLasso.R
+c4627b2b696d9fb0c184ea7a3ef3fa2e *R/regdiff.R
+a48312e30c985bc8bb1b188f0f665c3f *R/regdiff1M.R
+723ee35ea183a86de9e63429506c99f7 *man/clogitLasso.Rd
+9abd764baf1ca472375828a38e9f4680 *man/cv.clogitLasso.Rd
+03a5425f007768daee7206e8b4e9c866 *man/plot.clogitLasso.Rd

@@ -2,13 +2,13 @@
 % Please edit documentation in R/clogitLasso.R
 \name{clogitLasso}
 \alias{clogitLasso}
-\title{fit a conditional logistic regression with lasso}
+\title{fit lasso for conditional logistic regression for matched case-control studies}
 \usage{
 clogitLasso(X, y, strata, fraction = NULL, nbfraction = 100,
-  nopenalize = NULL, BACK = TRUE, BIC = FALSE, standardize = FALSE,
-  maxit = 100, maxitB = 500, thr = 1e-10, tol = 1e-10,
-  epsilon = 1e-04, trace = TRUE, log = FALSE, adaptive = FALSE,
-  separate = FALSE, ols = FALSE, p.fact, remove = FALSE)
+  nopenalize = NULL, BACK = TRUE, standardize = FALSE, maxit = 100,
+  maxitB = 500, thr = 1e-10, tol = 1e-10, epsilon = 1e-04,
+  trace = TRUE, log = TRUE, adaptive = FALSE, separate = FALSE,
+  ols = FALSE, p.fact = NULL, remove = FALSE)
 }
 \arguments{
 \item{X}{Input matrix, of dimension nobs x nvars; each row is an observation vector}
@@ -24,8 +24,6 @@ clogitLasso(X, y, strata, fraction = NULL, nbfraction = 100,
 \item{nopenalize}{List of coefficients not to penalize starting at 0}
 
 \item{BACK}{If TRUE, use Backtracking-line search -default is TRUE}
-
-\item{BIC}{If TRUE compute BIC-default is FALSE}
 
 \item{standardize}{Logical flag for x variable standardization, prior to fitting the model sequence.}
 
@@ -65,10 +63,7 @@ components:
 \item{nz}{A vector of length nbfraction containing the number of nonzero parameter estimates for
  the fit at the corresponding regularisation parameter}
 
- \item{w}{}
-
- \item{bic}{A vector of length nbfraction containing BIC  for
- the fit at the corresponding regularisation parameter}
+ \item{arg}{List of arguments}
 }
 \description{
 Fit a sequence of conditional logistic regression with lasso penalty,for small to large sized samples
@@ -79,12 +74,12 @@ The sequence of models implied by fraction  is fit by  IRLS (iteratively
  by coordinate descent with warm starts and sequential strong rules
 }
 \examples{
-\dontrun{
- #generate data}
+#generate data
  y = rep(c(1,0), 100)
  X = matrix (rnorm(20000, 0, 1), ncol = 100) # pure noise
  strata = sort(rep(1:100, 2))
 
+ # 1:1
  fitLasso = clogitLasso(X,y,strata,log=TRUE)
 }
 \author{
